@@ -3,8 +3,8 @@
 <head>
 <title>3d Figures</title>
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-<script src="../libs/jquery-3.3.1/jquery-3.3.1.js"></script>
-<script src="../libs/gl-matrix/gl-matrix.js"></script>
+<script src="libs/jquery-3.3.1/jquery-3.3.1.js"></script>
+<script src="libs/gl-matrix/gl-matrix.js"></script>
 
 <script src="3d_figures.js"></script>
 
@@ -18,7 +18,10 @@
 		        initGL(canvas);
 				initShader(gl);
 				// TO DO: create and draw the figures
-				run(gl, []);
+				var pyramid = createPyramid(gl, [-14, -4, -45], [0.1, 1.0, 0.2]);
+				var octahedron = createOctahedron(gl, [10, 0, -30], [0.0, 1.0, 0.0]);
+				var dodecahedron = createDodecahedron(gl, [0, 0, -10], [-0.4, 1.0, 0.1]);
+				run(gl, [pyramid, octahedron, dodecahedron]);
 			}
 	);
 
@@ -27,7 +30,7 @@
 </head>
 <body>
 
-    <canvas id="webglcanvas" style="border: none;" width="500" height="500"></canvas>
+    <canvas id="webglcanvas" style="border: none;" width="1000" height="800"></canvas>
 
 </body>
 </html>
